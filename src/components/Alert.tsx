@@ -1,13 +1,20 @@
-import { ReactNode } from "react";
-
 interface AlertProps {
-  children: ReactNode;
+  children: string;
+  color?:
+    | "primary"
+    | "secondary"
+    | "succes"
+    | "danger"
+    | "warning"
+    | "info"
+    | "light"
+    | "dark";
   onClose: () => void;
 }
 
-const Alert = ({ children, onClose }: AlertProps) => {
+const Alert = ({ children, color = "primary", onClose }: AlertProps) => {
   return (
-    <div className="alert alert-primary alert-dismissible">
+    <div className={"alert alert-" + color + " alert-dismissible"}>
       {children}
       <button
         type="button"
