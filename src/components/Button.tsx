@@ -1,6 +1,15 @@
 interface ButtonProps {
   children: string;
-  color?: "primary" | "secondary" | "danger";
+  color?:
+    | "primary"
+    | "secondary"
+    | "success"
+    | "danger"
+    | "warning"
+    | "info"
+    | "light"
+    | "dark"
+    | "link";
   onClick: () => void;
 }
 
